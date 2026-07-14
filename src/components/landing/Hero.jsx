@@ -12,15 +12,15 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#050505] pt-28">
+    <section className="relative isolate overflow-hidden min-h-screen flex items-center justify-center bg-[#050505] pt-28">
 
       {/* Background Glow */}
 
-      <div className="absolute w-[700px] h-[700px] bg-red-700/20 blur-[180px] rounded-full -top-40 -right-40"></div>
+      <div className="pointer-events-none absolute w-[700px] h-[700px] bg-red-700/20 blur-[180px] rounded-full -top-40 -right-40" />
 
-      <div className="absolute w-[500px] h-[500px] bg-red-500/10 blur-[160px] rounded-full bottom-0 left-0"></div>
+      <div className="pointer-events-none absolute w-[500px] h-[500px] bg-red-500/10 blur-[160px] rounded-full bottom-0 left-0" />
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 
         {/* LEFT */}
 
@@ -80,16 +80,12 @@ export default function Hero() {
           <div className="flex flex-wrap gap-5 mt-10">
 
             <Link
-              to="/chat"
-              className="px-8 py-4 rounded-xl bg-gradient-to-r from-red-600 to-red-800 hover:scale-105 transition-all flex items-center gap-2 shadow-lg shadow-red-900/50"
+              to="/login"
+              onClick={() => console.log("Clicked")}
+              className="px-8 py-4 rounded-xl bg-red-600"
             >
-
               Start Free
-
-              <ArrowRight size={20} />
-
             </Link>
-
             <Link
               to="/login"
               className="px-8 py-4 rounded-xl border border-red-700 hover:bg-red-900/20 transition"
@@ -144,7 +140,7 @@ export default function Hero() {
           </div>
 
         </motion.div>
-                {/* RIGHT */}
+        {/* RIGHT */}
 
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -287,7 +283,7 @@ export default function Hero() {
           </div>
 
         </motion.div>
-              </div>
+      </div>
 
     </section>
   );
