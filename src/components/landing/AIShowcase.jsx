@@ -368,28 +368,17 @@ const stats = [
                   <pre className="overflow-x-auto rounded-2xl border border-white/5 bg-black/50 p-5 font-mono text-[13px] leading-7">
 
 {`export default function Hero(){
-
 return(
-
 <section>
-
 <h1>Build AI Apps</h1>
-
 <p>Create anything with NEW AI</p>
-
 <button>
-
 Get Started
-
 </button>
-
 </section>
-
 )
-
 }`}
-
-                  </pre>
+                </pre>
 
                   <div className="mt-5 flex flex-wrap gap-2">
 
