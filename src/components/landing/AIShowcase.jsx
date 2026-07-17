@@ -17,50 +17,50 @@ import { useEffect, useState } from "react";
 export default function AIShowcase() {
 
 
-const verbs = [
-  "writes code",
-  "creates images",
-  "reads PDFs",
-  "answers anything",
-];
+  const verbs = [
+    "writes code",
+    "creates images",
+    "reads PDFs",
+    "answers anything",
+  ];
 
-const modes = [
-  {
-    id: "chat",
-    icon: Bot,
-    label: "Chat",
-  },
-  {
-    id: "code",
-    icon: Code2,
-    label: "Code",
-  },
-  {
-    id: "image",
-    icon: ImageIcon,
-    label: "Images",
-  },
-  {
-    id: "docs",
-    icon: FileText,
-    label: "Documents",
-  },
-];
+  const modes = [
+    {
+      id: "chat",
+      icon: Bot,
+      label: "Chat",
+    },
+    {
+      id: "code",
+      icon: Code2,
+      label: "Code",
+    },
+    {
+      id: "image",
+      icon: ImageIcon,
+      label: "Images",
+    },
+    {
+      id: "docs",
+      icon: FileText,
+      label: "Documents",
+    },
+  ];
 
-const stats = [
-  {
-    value: "2.4M+",
-    label: "Prompts Daily",
-  },
-  {
-    value: "180ms",
-    label: "First Token",
-  },
-  {
-    value: "99.99%",
-    label: "Uptime",
-  },
-];
+  const stats = [
+    {
+      value: "2.4M+",
+      label: "Prompts Daily",
+    },
+    {
+      value: "180ms",
+      label: "First Token",
+    },
+    {
+      value: "99.99%",
+      label: "Uptime",
+    },
+  ];
 
   const [verbIndex, setVerbIndex] = useState(0);
 
@@ -150,7 +150,7 @@ const stats = [
           <div className="mt-10 flex flex-wrap items-center gap-5">
 
             <Link
-              to="/chat"
+              to="/Login"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-red-600 to-red-800 px-7 py-4 text-sm font-semibold transition hover:scale-105"
             >
               Start Chat
@@ -162,7 +162,7 @@ const stats = [
             </Link>
 
             <Link
-              to="/pricing"
+              to="/Pricing"
               className="rounded-full border border-white/10 px-7 py-4 text-sm text-neutral-300 transition hover:border-red-500 hover:text-white"
             >
               View Pricing
@@ -172,25 +172,6 @@ const stats = [
 
           {/* ================= Keyboard ================= */}
 
-          <div className="mt-8 flex items-center gap-3 text-sm text-neutral-500">
-
-            <Command size={16} />
-
-            Press
-
-            <kbd className="rounded border border-white/10 px-2 py-1 text-xs">
-              Ctrl
-            </kbd>
-
-            +
-
-            <kbd className="rounded border border-white/10 px-2 py-1 text-xs">
-              K
-            </kbd>
-
-            to start instantly
-
-          </div>
 
           {/* ================= Stats ================= */}
 
@@ -268,7 +249,7 @@ const stats = [
           }}
           className="relative mt-20 lg:mt-0"
         >
-                    {/* Window Border */}
+          {/* Window Border */}
 
           <span className="absolute -left-2 -top-2 h-4 w-4 border-l border-t border-red-500/60" />
           <span className="absolute -right-2 -top-2 h-4 w-4 border-r border-t border-red-500/60" />
@@ -308,11 +289,10 @@ const stats = [
                   <button
                     key={item.id}
                     onClick={() => setMode(item.id)}
-                    className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm transition ${
-                      active
+                    className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm transition ${active
                         ? "bg-red-600/10 text-red-400 ring-1 ring-red-500/30"
                         : "text-neutral-500 hover:text-white"
-                    }`}
+                      }`}
                   >
 
                     <Icon size={15} />
@@ -367,7 +347,7 @@ const stats = [
                 <>
                   <pre className="overflow-x-auto rounded-2xl border border-white/5 bg-black/50 p-5 font-mono text-[13px] leading-7">
 
-{`export default function Hero(){
+                    {`export default function Hero(){
 return(
 <section>
 <h1>Build AI Apps</h1>
@@ -378,7 +358,7 @@ Get Started
 </section>
 )
 }`}
-                </pre>
+                  </pre>
 
                   <div className="mt-5 flex flex-wrap gap-2">
 
@@ -404,11 +384,11 @@ Get Started
                 </>
 
               )}
-                            {mode === "image" && (
+              {mode === "image" && (
 
                 <div className="grid grid-cols-3 gap-3">
 
-                  {[1,2,3,4,5,6].map((item)=>(
+                  {[1, 2, 3, 4, 5, 6].map((item) => (
 
                     <div
                       key={item}
@@ -529,6 +509,5 @@ Get Started
   );
 
 }
-      
 
-          
+
