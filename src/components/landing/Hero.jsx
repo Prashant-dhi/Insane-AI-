@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 export default function Hero() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#070607] text-[#f4f1ea]">
@@ -27,21 +28,6 @@ export default function Hero() {
 
       {/* NAV */}
       <header className="relative z-20 mx-auto flex max-w-[1400px] items-center justify-between px-8 py-6">
-        <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-[#ff3131] to-[#7a0d0d] shadow-[0_0_20px_-4px_#ff3131]">
-            <Sparkles className="h-3.5 w-3.5" />
-          </div>
-          <span className="font-serif text-lg tracking-tight">newai</span>
-          <span className="ml-1 rounded-full border border-white/15 px-2 py-0.5 text-[10px] uppercase tracking-widest text-white/50">
-            v3
-          </span>
-        </div>
-        <nav className="hidden items-center gap-8 text-sm text-white/60 md:flex">
-          <a href="#work" className="hover:text-white">Work</a>
-          <a href="#models" className="hover:text-white">Models</a>
-          <a href="#pricing" className="hover:text-white">Pricing</a>
-          <a href="#journal" className="hover:text-white">Journal</a>
-        </nav>
         <Link
           to="/login"
           className="inline-flex items-center gap-1.5 rounded-full bg-[#c1272d] px-4 py-2 text-sm text-[#f4f1ea] transition hover:bg-[#ff3131]"

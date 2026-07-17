@@ -58,6 +58,13 @@ export default function Sidebar({
   const navigate = useNavigate();
   const { user } = useAuth();
 
+  const displayName =
+  user?.displayName ||
+  user?.email?.split("@")[0] ||
+  "User";
+
+const initial = displayName.charAt(0).toUpperCase();
+
   const [collapsed, setCollapsed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(null);
   const [search, setSearch] = useState("");

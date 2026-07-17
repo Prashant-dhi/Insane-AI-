@@ -37,7 +37,7 @@ export default function NotFound() {
 
 
         <Link
-          to="/dashboard"
+          to="/Login"
           className="inline-block mt-8 bg-gradient-to-r from-red-600 to-red-800 px-8 py-3 rounded-xl font-semibold"
         >
           Go To Dashboard
