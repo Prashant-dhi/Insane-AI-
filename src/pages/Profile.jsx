@@ -47,10 +47,10 @@ export default function Profile() {
   const [editing, setEditing] = useState(false);
 
   const [profile, setProfile] = useState({
-    name: "Prashant Dhiman",
-    email: "dhimanprashant57@gmail.com",
+    name: "",
+    email: "",
     avatar:
-      "https://ui-avatars.com/api/?name=Prashant+Dhiman&background=111111&color=ffffff&size=300",
+      "",
     plan: "Premium",
   });
 
