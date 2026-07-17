@@ -15,6 +15,8 @@ import {
   Crown,
 } from "lucide-react";
 
+import { useAuth } from "../../context/AuthContext";
+
 import {
   PanelLeftClose,
   PanelLeftOpen,
@@ -54,6 +56,7 @@ export default function Sidebar({
   } = useChat();
 
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const [collapsed, setCollapsed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(null);
@@ -295,7 +298,6 @@ export default function Sidebar({
               gap-2
               rounded-lg
               text-[13px]
-              font-normal
               bg-[#E53935]
               font-medium
               transition
@@ -341,7 +343,7 @@ export default function Sidebar({
 
         <div className="flex-1 overflow-y-auto overflow-x-visible px-3 pt-5">
           {!collapsed && (
-            <h3 className="mb-3 px-2 text-[11px] font-semibold uppercase tracking-[0.08em] font-medium text-gray-500">
+            <h3 className="mb-3 px-2 text-[11px]  uppercase tracking-[0.08em] font-medium text-gray-500">
               Recent Chats
             </h3>
           )}
@@ -571,17 +573,17 @@ ${currentChatId === chat.id
         <div className="border-t border-[#202020] p-4">
           {!collapsed && (
             <div className="flex items-center gap-2 rounded-xl border border-[#232323] bg-[#121212] p-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E53935] font-semibold text-white">
-                P
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E53935] font-semibold">
+                {initial}
               </div>
 
               <div className="flex-1 overflow-hidden">
                 <h3 className="truncate text-[13px] font-medium">
-                  Prashant Dhiman
+                  {displayName}
                 </h3>
 
                 <p className="truncate text-[11px] text-gray-500">
-                  Premium User
+                  {user?.email}
                 </p>
               </div>
             </div>

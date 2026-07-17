@@ -6,6 +6,7 @@ import {
   GithubAuthProvider,
   signInWithPopup,
   deleteUser,
+  updateProfile,
 } from "firebase/auth";
 
 import { auth } from "../firebase/firebase";
@@ -16,8 +17,19 @@ export async function login(email, password) {
 }
 
 // Signup
-export async function signup(email, password) {
-  return createUserWithEmailAndPassword(auth, email, password);
+export async function signup(name, email, password) {
+
+  const result = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+
+  await updateProfile(result.user, {
+    displayName: name,
+  });
+
+  return result;
 }
 
 // Logout
@@ -40,7 +52,6 @@ export async function loginWithGithub() {
 // Delete Current User
 export async function deleteCurrentUser() {
   if (!auth.currentUser) return;
-  
+
   return deleteUser(auth.currentUser);
 }
-

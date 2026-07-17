@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signup, loginWithGoogle } from "../services/auth";
 import {
   User,
   Mail,
@@ -9,6 +8,12 @@ import {
   EyeOff,
   Globe,
 } from "lucide-react";
+
+import {
+  signup,
+  loginWithGoogle,
+  loginWithGithub
+} from "../services/auth";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -26,7 +31,7 @@ export default function Signup() {
     try {
       setLoading(true);
 
-      await signup(email, password);
+      await signup(name, email, password);
 
       navigate("/dashboard");
     } catch (err) {
@@ -42,6 +47,21 @@ export default function Signup() {
       navigate("/dashboard");
     } catch (err) {
       alert(err.message);
+    }
+  };
+  const handleGithub = async () => {
+    try {
+      setLoading(true);
+
+      await loginWithGithub();
+
+      navigate("/dashboard");
+
+    } catch (err) {
+      alert(err.message);
+
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -166,12 +186,13 @@ export default function Signup() {
             </button>
 
             <button
-              className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3"
+              onClick={handleGithub}
+              disabled={loading}
+              className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3 transition"
             >
               <Globe size={20} />
               Continue with GitHub
             </button>
-
           </div>
 
           <p className="text-center text-gray-400 mt-8">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+
 import {
   login,
   loginWithGoogle,
@@ -101,15 +102,30 @@ export default function Login() {
     }
 
   };
+  const handleGithub = async () => {
+    try {
+      setLoading(true);
 
+      await loginWithGithub();
 
+      navigate(from, {
+        replace: true,
+      });
+
+    } catch (err) {
+      alert(err.message);
+
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
 
   return (
 
-   <div
-  className="
+    <div
+      className="
   min-h-screen
   bg-[#050505]
   flex
@@ -119,7 +135,7 @@ export default function Login() {
   py-10
   overflow-y-auto
   "
->
+    >
 
       <div className="
       absolute
@@ -129,19 +145,19 @@ export default function Login() {
 
 
 
-<div
-  className="
+      <div
+        className="
   relative
   w-full
   max-w-md
   my-8
   "
->
+      >
 
 
 
-       <div
-  className="
+        <div
+          className="
   bg-[#111111]/60
   backdrop-blur-xl
   border
@@ -151,7 +167,7 @@ export default function Login() {
   sm:p-8
   shadow-2xl
   "
->
+        >
 
 
 
@@ -516,13 +532,13 @@ export default function Login() {
           </button>
           <button
             type="button"
+            onClick={handleGithub}
+            disabled={loading}
             className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3 transition"
           >
             <Globe size={20} />
             Continue with GitHub
           </button>
-
-
 
 
 
