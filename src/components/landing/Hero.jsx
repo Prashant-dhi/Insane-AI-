@@ -26,15 +26,7 @@ export default function Hero() {
         }}
       />
 
-      {/* NAV */}
-      <header className="relative z-20 mx-auto flex max-w-[1400px] items-center justify-between px-8 py-6">
-        <Link
-          to="/login"
-          className="inline-flex items-center gap-1.5 rounded-full bg-[#c1272d] px-4 py-2 text-sm text-[#f4f1ea] transition hover:bg-[#ff3131]"
-        >
-          Open app <ArrowUpRight className="h-3.5 w-3.5" />
-        </Link>
-      </header>
+     
 
       {/* HERO */}
       <section className="relative z-10 mx-auto max-w-[1400px] px-8 pb-24 pt-12">
