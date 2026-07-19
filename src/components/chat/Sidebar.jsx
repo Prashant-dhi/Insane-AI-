@@ -201,13 +201,14 @@ export default function Sidebar({
 
     setMenuOpen(menuOpen === chatId ? null : chatId);
   };
-
-  import { logoutUser } from "../../services/auth";
-
+  
   const logout = async () => {
     try {
       await logoutUser();
-      navigate("/", { replace: true });
+
+      navigate("/", {
+        replace: true,
+      });
     } catch (err) {
       console.error(err);
     }
