@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 import { DEFAULT_MODEL } from "../services/ai/models";
-
+import { useAuth } from "./AuthContext";
 import { generateChatTitle } from "../services/ai";
 
 const ChatContext = createContext();
@@ -43,10 +43,17 @@ function createNewChat(model = DEFAULT_MODEL.id) {
 }
 
 export default function ChatProvider({ children }) {
+
+  const { user } = useAuth();
+
+  const CHAT_KEY = `new-ai-chats-${user?.uid || "guest"}`;
+
+  const CURRENT_KEY = `new-ai-current-${user?.uid || "guest"}`;
+
   const [chats, setChats] = useState(() => {
     try {
       const saved =
-        localStorage.getItem("new-ai-chats");
+        localStorage.getItem(CHAT_KEY);
 
       if (saved) {
         const parsed = JSON.parse(saved);
@@ -69,7 +76,7 @@ export default function ChatProvider({ children }) {
     useState(() => {
       const saved =
         localStorage.getItem(
-          "new-ai-current"
+          CURRENT_KEY
         );
 
       return saved ? Number(saved) : null;
@@ -88,10 +95,44 @@ export default function ChatProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem(
-      "new-ai-chats",
+      CHAT_KEY,
       JSON.stringify(chats)
     );
-  }, [chats]);
+  }, [CHAT_KEY, chats]);
+
+  useEffect(() => {
+    if (!user) {
+      setChats([createNewChat()]);
+      setCurrentChatId(null);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (!user) return;
+
+    const saved = localStorage.getItem(CHAT_KEY);
+
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+
+        if (Array.isArray(parsed) && parsed.length) {
+          setChats(parsed);
+        } else {
+          setChats([createNewChat()]);
+        }
+      } catch {
+        setChats([createNewChat()]);
+      }
+    } else {
+      setChats([createNewChat()]);
+    }
+
+    const current = localStorage.getItem(CURRENT_KEY);
+
+    setCurrentChatId(current ? Number(current) : null);
+
+  }, [CHAT_KEY, CURRENT_KEY, user]);
 
   useEffect(() => {
     if (!currentChatId && chats.length) {
@@ -102,11 +143,11 @@ export default function ChatProvider({ children }) {
   useEffect(() => {
     if (currentChatId) {
       localStorage.setItem(
-        "new-ai-current",
+        CURRENT_KEY,
         String(currentChatId)
       );
     }
-  }, [currentChatId]);
+  }, [CURRENT_KEY, currentChatId]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -156,58 +197,58 @@ export default function ChatProvider({ children }) {
   };
 
   const addMessage = (message) => {
-  const activeId = currentChatId;
+    const activeId = currentChatId;
 
-  setChats((prevChats) =>
-    prevChats.map((chat) => {
-      if (chat.id !== activeId) return chat;
+    setChats((prevChats) =>
+      prevChats.map((chat) => {
+        if (chat.id !== activeId) return chat;
 
-      const updatedMessages = [
-        ...chat.messages,
-        {
-          ...message,
-          id: message.id || Date.now(),
-        },
-      ];
+        const updatedMessages = [
+          ...chat.messages,
+          {
+            ...message,
+            id: message.id || Date.now(),
+          },
+        ];
 
-      const firstUser = updatedMessages.find(
-        (m) => m.type === "user"
-      );
+        const firstUser = updatedMessages.find(
+          (m) => m.type === "user"
+        );
 
-      return {
-        ...chat,
-        messages: updatedMessages,
-        totalMessages: updatedMessages.length,
-        updatedAt: new Date().toISOString(),
-        lastMessage: message.text || "",
-        title:
-          firstUser?.text?.slice(0, 40) ||
-          "New Chat",
-      };
-    })
-  );
+        return {
+          ...chat,
+          messages: updatedMessages,
+          totalMessages: updatedMessages.length,
+          updatedAt: new Date().toISOString(),
+          lastMessage: message.text || "",
+          title:
+            firstUser?.text?.slice(0, 40) ||
+            "New Chat",
+        };
+      })
+    );
 
-  // Generate title only for first user message
-  if (message.type === "user" && currentChat?.messages.length === 0) {
-    generateChatTitle(message.text)
-      .then((res) => {
-        const title =
-          typeof res === "string" ? res : res.text;
+    // Generate title only for first user message
+    if (message.type === "user" && currentChat?.messages.length === 0) {
+      generateChatTitle(message.text)
+        .then((res) => {
+          const title =
+            typeof res === "string" ? res : res.text;
 
-        setChats((old) =>
-          old.map((c) =>
-            c.id === activeId
-              ? {
+          setChats((old) =>
+            old.map((c) =>
+              c.id === activeId
+                ? {
                   ...c,
                   title: title.trim(),
                 }
-              : c
-          )
-        );
-      })
-      .catch(console.error);
-  }
-};
+                : c
+            )
+          );
+        })
+        .catch(console.error);
+    }
+  };
   const startStreamingMessage = () => {
     const id = Date.now();
 

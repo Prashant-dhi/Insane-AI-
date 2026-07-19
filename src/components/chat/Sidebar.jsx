@@ -17,6 +17,8 @@ import {
 
 import { useAuth } from "../../context/AuthContext";
 
+import { logoutUser } from "../../services/auth";
+
 import {
   PanelLeftClose,
   PanelLeftOpen,
@@ -59,11 +61,11 @@ export default function Sidebar({
   const { user } = useAuth();
 
   const displayName =
-  user?.displayName ||
-  user?.email?.split("@")[0] ||
-  "User";
+    user?.displayName ||
+    user?.email?.split("@")[0] ||
+    "User";
 
-const initial = displayName.charAt(0).toUpperCase();
+  const initial = displayName.charAt(0).toUpperCase();
 
   const [collapsed, setCollapsed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(null);
@@ -200,9 +202,15 @@ const initial = displayName.charAt(0).toUpperCase();
     setMenuOpen(menuOpen === chatId ? null : chatId);
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
+  import { logoutUser } from "../../services/auth";
+
+  const logout = async () => {
+    try {
+      await logoutUser();
+      navigate("/", { replace: true });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
