@@ -347,10 +347,6 @@ export default function Hero() {
 
         </motion.div>
 
-      </section>
-
-      
-
       {/* Features */}
 
       <section className="py-24">
