@@ -82,13 +82,13 @@ export default function Page() {
 
             </div>
 
-            Trusted by
+
 
             <br />
 
             <span className="bg-gradient-to-r from-red-500 to-orange-300 bg-clip-text text-transparent">
 
-              Developers Worldwide
+              Trusted by Developers Worldwide
 
             </span>
             <p className="mx-auto mt-6 text-pretty text-lg leading-relaxed text-gray-400">
