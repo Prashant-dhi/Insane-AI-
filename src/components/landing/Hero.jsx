@@ -137,95 +137,67 @@ export default function Hero() {
 
           </motion.div>
 
-          {/* Right Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#111111] shadow-2xl">
+                  {/* Right Side */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative"
+        >
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#111111] shadow-2xl">
 
-              {/* Header */}
+            {/* Header */}
 
-              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+            <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
 
-                <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
-                    <Sparkles size={18} />
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold">NEW AI</h3>
-                    <p className="text-xs text-gray-500">
-                      GPT-5 Selected
-                    </p>
-                  </div>
-
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
+                  <Sparkles size={18} />
                 </div>
 
-                <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
-                  Online
-                </span>
-
-              </div>
-
-              {/* Chat */}
-
-              <div className="space-y-5 p-6">
-
-                <div className="flex justify-end">
-
-                  <div className="max-w-[75%] rounded-2xl bg-red-600 px-5 py-4 text-sm text-white">
-                    Create a beautiful React dashboard with Tailwind CSS.
-                  </div>
-
-                </div>
-
-                <div className="flex">
-
-                  <div className="max-w-[85%] rounded-2xl bg-[#1a1a1a] px-5 py-4 text-sm leading-7 text-gray-300">
-
-                    Absolutely! I'll create:
-
-                    <ul className="mt-3 space-y-2 text-gray-400">
-
-                      <li>• Modern Sidebar</li>
-                      <li>• Analytics Dashboard</li>
-                      <li>• Charts & Statistics</li>
-                      <li>• Responsive Layout</li>
-                      <li>• Beautiful Dark UI</li>
-
-                    </ul>
-
-                  </div>
-
+                <div>
+                  <h3 className="font-semibold">NEW AI</h3>
+                  <p className="text-xs text-gray-500">
+                    GPT-5 Selected
+                  </p>
                 </div>
 
               </div>
 
-              {/* Input */}
+              <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
+                Online
+              </span>
 
-              <div className="border-t border-white/10 p-5">
+            </div>
 
-                <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
+            {/* Chat */}
 
-                  <Plus
-                    size={18}
-                    className="text-gray-500"
-                  />
+            <div className="space-y-5 p-6">
 
-                  <input
-                    disabled
-                    placeholder="Message NEW AI..."
-                    className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
-                  />
+              <div className="flex justify-end">
 
-                  <ArrowRight
-                    size={18}
-                    className="text-red-500"
-                  />
+                <div className="max-w-[75%] rounded-2xl bg-red-600 px-5 py-4 text-sm text-white">
+                  Create a beautiful React dashboard with Tailwind CSS.
+                </div>
+
+              </div>
+
+              <div className="flex">
+
+                <div className="max-w-[85%] rounded-2xl bg-[#1a1a1a] px-5 py-4 text-sm leading-7 text-gray-300">
+
+                  Absolutely! I'll create:
+
+                  <ul className="mt-3 space-y-2 text-gray-400">
+
+                    <li>• Modern Sidebar</li>
+                    <li>• Analytics Dashboard</li>
+                    <li>• Charts & Statistics</li>
+                    <li>• Responsive Layout</li>
+                    <li>• Beautiful Dark UI</li>
+
+                  </ul>
 
                 </div>
 
@@ -233,119 +205,147 @@ export default function Hero() {
 
             </div>
 
-          </motion.div>
+            {/* Input */}
 
-        </div>
-      </section>
+            <div className="border-t border-white/10 p-5">
 
-      {/* AI Chat Preview */}
+              <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className="mt-20 w-full max-w-5xl rounded-3xl border border-white/10 bg-[#111111] shadow-2xl"
-      >
+                <Plus
+                  size={18}
+                  className="text-gray-500"
+                />
 
-        {/* Header */}
+                <input
+                  disabled
+                  placeholder="Message NEW AI..."
+                  className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
+                />
 
-        <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+                <ArrowRight
+                  size={18}
+                  className="text-red-500"
+                />
 
-          <div className="flex items-center gap-3">
-
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
-
-              <Sparkles size={18} />
-
-            </div>
-
-            <div>
-
-              <h3 className="font-semibold">
-                NEW AI
-              </h3>
-
-              <p className="text-sm text-gray-500">
-                GPT-5 Selected
-              </p>
+              </div>
 
             </div>
 
           </div>
 
-          <div className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
-            Online
+        </motion.div>
+
+      </div>
+    </section>
+
+            {/* AI Chat Preview */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mt-20 w-full max-w-5xl rounded-3xl border border-white/10 bg-[#111111] shadow-2xl"
+        >
+
+          {/* Header */}
+
+          <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+
+            <div className="flex items-center gap-3">
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
+
+                <Sparkles size={18} />
+
+              </div>
+
+              <div>
+
+                <h3 className="font-semibold">
+                  NEW AI
+                </h3>
+
+                <p className="text-sm text-gray-500">
+                  GPT-5 Selected
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
+              Online
+            </div>
+
           </div>
 
-        </div>
+          {/* Messages */}
 
-        {/* Messages */}
+          <div className="space-y-6 p-6">
 
-        <div className="space-y-6 p-6">
+            <div className="flex justify-end">
 
-          <div className="flex justify-end">
+              <div className="max-w-md rounded-2xl bg-red-600 px-5 py-4 text-white">
 
-            <div className="max-w-md rounded-2xl bg-red-600 px-5 py-4 text-white">
+                Create a modern React dashboard with dark UI.
 
-              Create a modern React dashboard with dark UI.
+              </div>
+
+            </div>
+
+            <div className="flex">
+
+              <div className="max-w-xl rounded-2xl bg-[#1b1b1b] px-5 py-4 text-gray-300">
+
+                Absolutely! I'll build:
+
+                <ul className="mt-4 space-y-2">
+
+                  <li>• Beautiful Sidebar</li>
+
+                  <li>• Dashboard Analytics</li>
+
+                  <li>• Charts</li>
+
+                  <li>• Responsive Design</li>
+
+                  <li>• Dark Theme</li>
+
+                </ul>
+
+              </div>
 
             </div>
 
           </div>
 
-          <div className="flex">
+          {/* Input */}
 
-            <div className="max-w-xl rounded-2xl bg-[#1b1b1b] px-5 py-4 text-gray-300">
+          <div className="border-t border-white/10 p-5">
 
-              Absolutely! I'll build:
+            <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
 
-              <ul className="mt-4 space-y-2">
+              <Plus
+                size={18}
+                className="text-gray-500"
+              />
 
-                <li>• Beautiful Sidebar</li>
+              <input
+                disabled
+                placeholder="Message NEW AI..."
+                className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
+              />
 
-                <li>• Dashboard Analytics</li>
-
-                <li>• Charts</li>
-
-                <li>• Responsive Design</li>
-
-                <li>• Dark Theme</li>
-
-              </ul>
+              <ArrowRight
+                size={18}
+                className="text-red-500"
+              />
 
             </div>
 
           </div>
 
-        </div>
-
-        {/* Input */}
-
-        <div className="border-t border-white/10 p-5">
-
-          <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
-
-            <Plus
-              size={18}
-              className="text-gray-500"
-            />
-
-            <input
-              disabled
-              placeholder="Message NEW AI..."
-              className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
-            />
-
-            <ArrowRight
-              size={18}
-              className="text-red-500"
-            />
-
-          </div>
-
-        </div>
-
-      </motion.div>
+        </motion.div>
 
       {/* Features */}
 
@@ -492,14 +492,27 @@ export default function Hero() {
 
             </p>
 
-            <Link
-              to="/signup"
-              className="flex items-center gap-2 rounded-xl bg-red-600 px-8 py-4 font-semibold transition hover:bg-red-700"
-            >
-              Get Started
-              <ArrowRight size={18} />
-            </Link>
-            
+          <Link
+  to="/login"
+  className="
+    mt-10
+    inline-flex
+    items-center
+    gap-2
+    rounded-xl
+    bg-white
+    px-8
+    py-4
+    font-semibold
+    text-black
+    transition
+    hover:scale-105
+  "
+>
+  Get Started
+  <ArrowRight size={18} />
+</Link>
+
           </motion.div>
 
         </div>
