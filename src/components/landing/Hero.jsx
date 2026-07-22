@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
+import Features from "../components/landing/Features";
 
 export default function Hero() {
   return (

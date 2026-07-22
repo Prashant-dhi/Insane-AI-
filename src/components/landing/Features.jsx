@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Check, Zap } from "lucide-react";
-import Pricing from "../components/landing/Pricing";
-
 
 const plans = [
   {
@@ -49,7 +47,7 @@ const plans = [
   },
 ];
 
-export default function Pricing() {
+export default function Features() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
 
