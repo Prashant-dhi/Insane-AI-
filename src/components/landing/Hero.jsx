@@ -262,7 +262,7 @@ export default function Hero() {
               <div>
 
                 <h3 className="font-semibold">
-                  NEW AI
+                    INSANE AI
                 </h3>
 
                 <p className="text-sm text-gray-500">
