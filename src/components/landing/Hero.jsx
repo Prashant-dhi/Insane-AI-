@@ -1,186 +1,536 @@
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Sparkles,
+  ArrowRight,
+  MessageSquare,
   Code2,
   Image as ImageIcon,
-  MessageSquare,
-  Command,
+  Bot,
   Plus,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#070607] text-[#f4f1ea]">
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute -top-64 -right-40 h-[780px] w-[780px] rounded-full bg-[#ff2a2a]/25 blur-[200px]" />
-      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[560px] w-[560px] rounded-full bg-[#ff5f4a]/10 blur-[180px]" />
-      {/* Dot grain */}
+    <main className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
+
+      {/* Background Glow */}
+
+      <div className="absolute inset-0 overflow-hidden">
+
+        <div className="absolute left-1/2 top-[-250px] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-red-600/20 blur-[180px]" />
+
+        <div className="absolute bottom-[-250px] right-[-150px] h-[500px] w-[500px] rounded-full bg-red-500/10 blur-[170px]" />
+
+      </div>
+
+      {/* Grid */}
+
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: "radial-gradient(#ffffff10 1px, transparent 1px)",
-          backgroundSize: "3px 3px",
+          backgroundImage:
+            "linear-gradient(#ffffff 1px,transparent 1px),linear-gradient(90deg,#ffffff 1px,transparent 1px)",
+          backgroundSize: "70px 70px",
         }}
       />
 
-     
+      <section className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20">
 
-      {/* HERO */}
-      <section className="relative z-10 mx-auto max-w-[1400px] px-8 pb-24 pt-12">
-        {/* Meta strip */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-y border-white/10 py-3 text-[11px] uppercase tracking-[0.2em] text-white/50">
-          <span>Issue 001 · Winter 2026</span>
-          <span className="hidden md:inline">A dispatch on intelligent tools</span>
-          <span className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#ff3131] shadow-[0_0_8px_#ff3131]" />
-            Live · 4 models routing
-          </span>
-        </div>
+        <div className="grid items-center gap-20 lg:grid-cols-2">
 
-        <div className="grid grid-cols-12 gap-6 pt-10 lg:pt-14">
-          {/* Left column */}
+          {/* LEFT */}
+
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 lg:col-span-8"
+            transition={{ duration: .7 }}
           >
-            <h1 className="font-serif text-[64px] leading-[0.92] tracking-[-0.03em] sm:text-[96px] lg:text-[132px]">
-              An assistant
-              <br />
-              that <em className="text-[#ff3131]">thinks</em>
-              <br />
-              <span className="inline-flex items-center gap-4">
-                with you.
-                <span className="inline-block h-2 w-24 translate-y-4 bg-[#ff3131]" />
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-5 py-2">
+
+              <Sparkles
+                size={16}
+                className="text-red-400"
+              />
+
+              <span className="text-sm text-red-300">
+
+                GPT-5 • Claude • Gemini • Llama
+
               </span>
+
+            </div>
+
+            <h1 className="mt-8 text-5xl font-bold leading-tight md:text-7xl">
+
+              AI that feels
+
+              <br />
+
+              <span className="bg-gradient-to-r from-red-500 to-orange-300 bg-clip-text text-transparent">
+
+                effortless.
+
+              </span>
+
             </h1>
 
-            <div className="mt-10 grid grid-cols-12 items-end gap-6">
-              <p className="col-span-12 max-w-md text-base leading-relaxed text-white/65 md:col-span-6">
-                One workspace routes every prompt to the best available model —
-                GPT-5, Claude, Gemini, Llama — so you spend time on the answer,
-                not the tool.
-              </p>
-              <div className="col-span-12 flex flex-wrap items-center gap-3 md:col-span-6 md:justify-end">
-                <Link
-                  to="/login"
-                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-[#ff4141] to-[#c81818] px-6 py-3.5 text-sm font-medium text-[#f4f1ea] shadow-[0_10px_40px_-10px_#ff3131] transition hover:shadow-[0_16px_50px_-10px_#ff3131]"
-                >
-                  Start writing
-                  <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
-                <Link
-                  to="/login"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-white/90 backdrop-blur transition hover:bg-white/[0.08]"
-                >
-                  Watch demo
-                </Link>
-              </div>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-gray-400">
+
+              Chat, generate images, write code, summarize documents,
+              brainstorm ideas and work faster using the world's
+              smartest AI models — all in one beautiful workspace.
+
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+
+              <Link
+                to="/signup"
+                className="flex items-center gap-2 rounded-xl bg-red-600 px-8 py-4 font-semibold transition hover:bg-red-700"
+              >
+                Get Started
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                to="/login"
+                className="rounded-xl border border-[#2d2d2d] px-8 py-4 font-semibold transition hover:border-red-600"
+              >
+                Login
+              </Link>
+
             </div>
+
+            <div className="mt-14 flex gap-12">
+
+              <div>
+                <h2 className="text-3xl font-bold">
+                  100K+
+                </h2>
+                <p className="text-gray-500">
+                  Users
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold">
+                  10M+
+                </h2>
+                <p className="text-gray-500">
+                  Messages
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold">
+                  99.9%
+                </h2>
+                <p className="text-gray-500">
+                  Uptime
+                </p>
+              </div>
+
+            </div>
+
           </motion.div>
 
-          {/* Right column — chat card */}
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 lg:col-span-4"
-          >
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative rounded-2xl border border-white/10 bg-[#0d0b0c]/80 p-5 shadow-[0_40px_80px_-30px_rgba(255,49,49,0.35)] backdrop-blur-xl"
-            >
-              <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-[#ff3131] to-[#7a0d0d]">
-                    <Sparkles className="h-3.5 w-3.5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold">newai</p>
-                    <p className="text-[10px] uppercase tracking-widest text-white/40">
-                      GPT-5 · routed
-                    </p>
-                  </div>
+                  {/* Right Side */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative"
+        >
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#111111] shadow-2xl">
+
+            {/* Header */}
+
+            <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+
+              <div className="flex items-center gap-3">
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
+                  <Sparkles size={18} />
                 </div>
-                <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
-                  Online
-                </span>
-              </div>
 
-              <div className="mt-4 space-y-3">
-                <motion.div
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                  className="rounded-xl bg-white/[0.04] p-3 text-[13px] leading-relaxed text-white/85"
-                >
-                  <p className="mb-1 text-[10px] uppercase tracking-widest text-white/40">You</p>
-                  Draft a launch essay in the voice of a design studio, 300 words, warm but precise.
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1 }}
-                  className="rounded-xl border border-[#ff3131]/25 bg-gradient-to-br from-[#ff3131]/[0.12] to-[#ff3131]/[0.03] p-3 text-[13px] leading-relaxed text-white/90"
-                >
-                  <p className="mb-1 text-[10px] uppercase tracking-widest text-[#ff8a8a]">newai</p>
-                  <p className="font-serif text-[15px] italic leading-snug">
-                    "There is a quiet kind of intelligence — the sort that doesn't announce itself…"
+                <div>
+                  <h3 className="font-semibold">NEW AI</h3>
+                  <p className="text-xs text-gray-500">
+                    GPT-5 Selected
                   </p>
-                  <div className="mt-2 flex items-center gap-2 text-[10px] text-white/45">
-                    <span className="flex gap-1">
-                      {[0, 1, 2].map((i) => (
-                        <motion.span
-                          key={i}
-                          animate={{ opacity: [0.2, 1, 0.2] }}
-                          transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.15 }}
-                          className="h-1 w-1 rounded-full bg-[#ff5a5a]"
-                        />
-                      ))}
-                    </span>
-                    writing · 284 / 300 words
-                  </div>
-                </motion.div>
+                </div>
+
               </div>
 
-              <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2">
-                <Plus className="h-4 w-4 text-white/40" />
-                <span className="flex-1 text-xs text-white/40">Ask anything…</span>
-                <kbd className="flex items-center gap-1 rounded border border-white/15 px-1.5 py-0.5 text-[10px] text-white/60">
-                  <Command className="h-3 w-3" /> K
-                </kbd>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
+              <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
+                Online
+              </span>
 
-        {/* Capabilities */}
-        <div className="mt-20 grid grid-cols-12 gap-6 border-t border-white/10 pt-10">
-          <div className="col-span-12 md:col-span-3">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-white/40">What it does</p>
-          </div>
-          {[
-            { n: "01", icon: MessageSquare, t: "Writes", d: "Long-form drafts, replies, briefs — in your voice." },
-            { n: "02", icon: Code2, t: "Codes", d: "Ships full features across React, Python, SQL." },
-            { n: "03", icon: ImageIcon, t: "Designs", d: "Generates, edits and iterates on visuals." },
-          ].map(({ n, icon: Icon, t, d }) => (
-            <div key={n} className="col-span-12 md:col-span-3">
-              <div className="flex items-baseline justify-between text-[11px] uppercase tracking-[0.2em] text-white/40">
-                <span>{n}</span>
-                <Icon className="h-3.5 w-3.5 text-[#ff6a6a]" />
-              </div>
-              <h3 className="mt-3 font-serif text-3xl tracking-tight">{t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">{d}</p>
             </div>
-          ))}
-        </div>
+
+            {/* Chat */}
+
+            <div className="space-y-5 p-6">
+
+              <div className="flex justify-end">
+
+                <div className="max-w-[75%] rounded-2xl bg-red-600 px-5 py-4 text-sm text-white">
+                  Create a beautiful React dashboard with Tailwind CSS.
+                </div>
+
+              </div>
+
+              <div className="flex">
+
+                <div className="max-w-[85%] rounded-2xl bg-[#1a1a1a] px-5 py-4 text-sm leading-7 text-gray-300">
+
+                  Absolutely! I'll create:
+
+                  <ul className="mt-3 space-y-2 text-gray-400">
+
+                    <li>• Modern Sidebar</li>
+                    <li>• Analytics Dashboard</li>
+                    <li>• Charts & Statistics</li>
+                    <li>• Responsive Layout</li>
+                    <li>• Beautiful Dark UI</li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Input */}
+
+            <div className="border-t border-white/10 p-5">
+
+              <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
+
+                <Plus
+                  size={18}
+                  className="text-gray-500"
+                />
+
+                <input
+                  disabled
+                  placeholder="Message NEW AI..."
+                  className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
+                />
+
+                <ArrowRight
+                  size={18}
+                  className="text-red-500"
+                />
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </motion.div>
+
+      </div>
+    </section>
+
+            {/* AI Chat Preview */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mt-20 w-full max-w-5xl rounded-3xl border border-white/10 bg-[#111111] shadow-2xl"
+        >
+
+          {/* Header */}
+
+          <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+
+            <div className="flex items-center gap-3">
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
+
+                <Sparkles size={18} />
+
+              </div>
+
+              <div>
+
+                <h3 className="font-semibold">
+                  NEW AI
+                </h3>
+
+                <p className="text-sm text-gray-500">
+                  GPT-5 Selected
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
+              Online
+            </div>
+
+          </div>
+
+          {/* Messages */}
+
+          <div className="space-y-6 p-6">
+
+            <div className="flex justify-end">
+
+              <div className="max-w-md rounded-2xl bg-red-600 px-5 py-4 text-white">
+
+                Create a modern React dashboard with dark UI.
+
+              </div>
+
+            </div>
+
+            <div className="flex">
+
+              <div className="max-w-xl rounded-2xl bg-[#1b1b1b] px-5 py-4 text-gray-300">
+
+                Absolutely! I'll build:
+
+                <ul className="mt-4 space-y-2">
+
+                  <li>• Beautiful Sidebar</li>
+
+                  <li>• Dashboard Analytics</li>
+
+                  <li>• Charts</li>
+
+                  <li>• Responsive Design</li>
+
+                  <li>• Dark Theme</li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Input */}
+
+          <div className="border-t border-white/10 p-5">
+
+            <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
+
+              <Plus
+                size={18}
+                className="text-gray-500"
+              />
+
+              <input
+                disabled
+                placeholder="Message NEW AI..."
+                className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
+              />
+
+              <ArrowRight
+                size={18}
+                className="text-red-500"
+              />
+
+            </div>
+
+          </div>
+
+        </motion.div>
+
       </section>
+
+      
+
+      {/* Features */}
+
+      <section className="py-24">
+
+        <div className="mx-auto max-w-7xl px-6">
+
+          <div className="text-center">
+
+            <p className="text-red-500 font-medium">
+              Everything you need
+            </p>
+
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+              Powerful AI Features
+            </h2>
+
+            <p className="mt-5 max-w-2xl mx-auto text-gray-400">
+              Everything is built inside one clean workspace.
+              Chat, code, images and productivity.
+            </p>
+
+          </div>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+            {[
+              {
+                icon: MessageSquare,
+                title: "AI Chat",
+                desc: "Ask questions, brainstorm ideas and receive intelligent responses instantly."
+              },
+
+              {
+                icon: Code2,
+                title: "Code Assistant",
+                desc: "Generate, explain and debug code in multiple programming languages."
+              },
+
+              {
+                icon: ImageIcon,
+                title: "Image Generator",
+                desc: "Turn simple prompts into beautiful AI generated images."
+              }
+
+            ].map((item, index) => {
+
+              const Icon = item.icon;
+
+              return (
+
+                <motion.div
+
+                  key={index}
+
+                  whileHover={{
+                    y: -8,
+                  }}
+
+                  className="
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-[#111111]
+                  p-8
+                  transition
+                  hover:border-red-500/40
+                  "
+
+                >
+
+                  <div className="
+                  w-14
+                  h-14
+                  rounded-2xl
+                  bg-red-600/20
+                  flex
+                  items-center
+                  justify-center
+                  text-red-500
+                  ">
+
+                    <Icon size={28} />
+
+                  </div>
+
+                  <h3 className="mt-6 text-2xl font-semibold">
+
+                    {item.title}
+
+                  </h3>
+
+                  <p className="mt-4 text-gray-400 leading-7">
+
+                    {item.desc}
+
+                  </p>
+
+                </motion.div>
+
+              );
+
+            })}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CTA */}
+
+      <section className="pb-24">
+
+        <div className="mx-auto max-w-6xl px-6">
+
+          <motion.div
+
+            whileHover={{
+              scale: 1.01,
+            }}
+
+            className="
+            rounded-[32px]
+            bg-gradient-to-r
+            from-red-600
+            to-red-800
+            p-14
+            text-center
+            "
+
+          >
+
+            <h2 className="text-4xl md:text-5xl font-bold">
+
+              Ready to start?
+
+            </h2>
+
+            <p className="mt-5 text-red-100 max-w-2xl mx-auto">
+
+              Join thousands of users using NEW AI every day
+              for writing, coding, creativity and productivity.
+
+            </p>
+
+            <Link
+
+              to="/signup"
+
+              className="
+              mt-10
+              inline-flex
+              items-center
+              gap-2
+              rounded-xl
+              bg-white
+              px-8
+              py-4
+              font-semibold
+              text-black
+              transition
+              hover:scale-105
+              "
+
+            >
+
+              Get Started Free
+
+              <ArrowRight size={18} />
+
+            </Link>
+
+          </motion.div>
+
+        </div>
+
+      </section>
+
     </main>
+
   );
+
 }
