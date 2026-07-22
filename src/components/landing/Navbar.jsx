@@ -91,7 +91,7 @@ export default function Navbar() {
 
             <h1 className="font-bold text-xl">
 
-              NEW AI
+              INSANE AI
 
             </h1>
 

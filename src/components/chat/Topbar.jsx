@@ -79,7 +79,7 @@ export default function Topbar({ setMobileOpen }) {
           <div>
 
             <h1 className="text-xl md:text-2xl font-bold">
-              NEW AI
+              INSANE AI
             </h1>
 
             <p className="hidden md:block text-xs text-gray-500">
