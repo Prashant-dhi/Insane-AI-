@@ -479,40 +479,6 @@ export default function Hero() {
 
           >
 
-            <h2 className="text-4xl md:text-5xl font-bold">
-
-              Ready to start?
-
-            </h2>
-
-            <p className="mt-5 text-red-100 max-w-2xl mx-auto">
-
-              Join thousands of users using NEW AI every day
-              for writing, coding, creativity and productivity.
-
-            </p>
-
-          <Link
-  to="/login"
-  className="
-    mt-10
-    inline-flex
-    items-center
-    gap-2
-    rounded-xl
-    bg-white
-    px-8
-    py-4
-    font-semibold
-    text-black
-    transition
-    hover:scale-105
-  "
->
-  Get Started
-  <ArrowRight size={18} />
-</Link>
-
           </motion.div>
 
         </div>
