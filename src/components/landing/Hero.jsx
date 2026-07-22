@@ -494,7 +494,7 @@ export default function Hero() {
 
             <Link
 
-              to="/signup"
+              to="/Login"
 
               className="
               mt-10
