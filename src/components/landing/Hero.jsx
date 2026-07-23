@@ -278,46 +278,6 @@ export default function Hero() {
 
           </div>
 
-          {/* Messages */}
-
-          <div className="space-y-6 p-6">
-
-            <div className="flex justify-end">
-
-              <div className="max-w-md rounded-2xl bg-red-600 px-5 py-4 text-white">
-
-                Create a modern React dashboard with dark UI.
-
-              </div>
-
-            </div>
-
-            <div className="flex">
-
-              <div className="max-w-xl rounded-2xl bg-[#1b1b1b] px-5 py-4 text-gray-300">
-
-                Absolutely! I'll build:
-
-                <ul className="mt-4 space-y-2">
-
-                  <li>• Beautiful Sidebar</li>
-
-                  <li>• Dashboard Analytics</li>
-
-                  <li>• Charts</li>
-
-                  <li>• Responsive Design</li>
-
-                  <li>• Dark Theme</li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-          </div>
-
           {/* Input */}
 
           <div className="border-t border-white/10 p-5">
