@@ -34,85 +34,140 @@ export default function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="bg-[#050505] py-28 px-6">
+    <section className="relative overflow-hidden bg-[#050505] py-32 px-6 text-white">
 
-      <div className="max-w-5xl mx-auto">
+      {/* Background Glow */}
 
-        <motion.div
-          initial={{ opacity:0, y:40 }}
-          whileInView={{ opacity:1, y:0 }}
-          viewport={{ once:true }}
-          className="text-center mb-16"
-        >
+      <div className="absolute inset-0 overflow-hidden">
 
-          <span className="uppercase tracking-[5px] text-red-500 font-semibold">
-            FAQ
-          </span>
+        <div className="absolute left-1/2 top-[-250px] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-red-600/20 blur-[180px]" />
 
-          <h2 className="text-5xl font-black mt-5">
-            Frequently Asked Questions
-          </h2>
+        <div className="absolute bottom-[-220px] right-[-120px] h-[500px] w-[500px] rounded-full bg-red-500/10 blur-[170px]" />
 
-          <p className="text-gray-400 mt-6">
-            Everything you need to know about NEW AI.
-          </p>
+      </div>
 
-        </motion.div>
+      {/* Square Grid */}
 
-        <div className="space-y-5">
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#ffffff 1px,transparent 1px),linear-gradient(90deg,#ffffff 1px,transparent 1px)",
+          backgroundSize: "70px 70px",
+        }}
+      />
 
-          {faqs.map((item,index)=>(
+      <div className="relative z-10 max-w-5xl mx-auto">
 
-            <motion.div
-              key={index}
-              layout
-              className="rounded-2xl border border-[#262626] bg-[#111111] overflow-hidden"
-            >
+        <div className="max-w-5xl mx-auto">
 
-              <button
-                onClick={()=>setOpen(open===index?-1:index)}
-                className="w-full flex justify-between items-center px-7 py-6"
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+
+            <span className="uppercase tracking-[5px] text-red-500 font-semibold">
+              FAQ
+            </span>
+            <h2 className="mt-8 text-5xl md:text-7xl font-bold leading-tight">
+
+              Frequently Asked
+
+              <br />
+
+              <span className="bg-gradient-to-r from-red-500 to-orange-300 bg-clip-text text-transparent">
+
+                Questions
+
+              </span>
+
+            </h2>
+
+            <p className="mt-8 max-w-3xl mx-auto text-lg leading-8 text-gray-400">
+              Everything you need to know about NEW AI.
+            </p>
+
+          </motion.div>
+
+          <div className="space-y-5">
+
+            {faqs.map((item, index) => (
+
+              <motion.div
+                key={index}
+                layout
+                className="
+group
+relative
+overflow-hidden
+rounded-[28px]
+border
+border-white/10
+bg-[#111111]/80
+backdrop-blur-xl
+transition-all
+duration-500
+hover:border-red-500/40
+hover:shadow-[0_20px_80px_rgba(239,68,68,.15)]
+"
               >
 
-                <span className="font-semibold text-lg">
-                  {item.question}
-                </span>
+                <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+                  <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-red-600/20 blur-[120px]" />
+                </div>
 
-                {open===index ? (
-                  <Minus className="text-red-500"/>
-                ) : (
-                  <Plus className="text-red-500"/>
-                )}
+                <button
+                  onClick={() => setOpen(open === index ? -1 : index)}
+                  className="relative z-10 flex w-full items-center justify-between px-8 py-7"
+                >
 
-              </button>
+                  <span className="font-semibold text-lg">
+                    {item.question}
+                  </span>
 
-              <AnimatePresence>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/10">
 
-                {open===index && (
+                    {open === index ? (
+                      <Minus className="text-red-400" size={18} />
+                    ) : (
+                      <Plus className="text-red-400" size={18} />
+                    )}
 
-                  <motion.div
-                    initial={{height:0,opacity:0}}
-                    animate={{height:"auto",opacity:1}}
-                    exit={{height:0,opacity:0}}
-                    transition={{duration:.3}}
-                  >
+                  </div>
 
-                    <div className="px-7 pb-6 text-gray-400 leading-8">
+                </button>
 
-                      {item.answer}
+                <AnimatePresence>
 
-                    </div>
+                  {open === index && (
 
-                  </motion.div>
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: .3 }}
+                    >
 
-                )}
+                      <div className="px-7 pb-6 text-gray-400 leading-8">
 
-              </AnimatePresence>
+                        {item.answer}
 
-            </motion.div>
+                      </div>
 
-          ))}
+                    </motion.div>
 
+                  )}
+
+                </AnimatePresence>
+
+              </motion.div>
+
+            ))}
+
+
+          </div>
         </div>
 
       </div>
