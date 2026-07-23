@@ -248,36 +248,6 @@ export default function Hero() {
 
           {/* Header */}
 
-          <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-
-            <div className="flex items-center gap-3">
-
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-600">
-
-                <Sparkles size={18} />
-
-              </div>
-
-              <div>
-
-                <h3 className="font-semibold">
-                    INSANE AI
-                </h3>
-
-                <p className="text-sm text-gray-500">
-                  GPT-5 Selected
-                </p>
-
-              </div>
-
-            </div>
-
-            <div className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400">
-              Online
-            </div>
-
-          </div>
-
           {/* Input */}
 
           <div className="border-t border-white/10 p-5">
