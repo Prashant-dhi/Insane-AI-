@@ -444,35 +444,7 @@ export default function Hero() {
 
       </section>
 
-      {/* CTA */}
-
-      <section className="pb-24">
-
-        <div className="mx-auto max-w-6xl px-6">
-
-          <motion.div
-
-            whileHover={{
-              scale: 1.01,
-            }}
-
-            className="
-            rounded-[32px]
-            bg-gradient-to-r
-            from-red-600
-            to-red-800
-            p-14
-            text-center
-            "
-
-          >
-
-          </motion.div>
-
-        </div>
-
-      </section>
-
+     
     </main>
 
   );
