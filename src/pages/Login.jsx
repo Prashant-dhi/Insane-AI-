@@ -502,24 +502,24 @@ export default function Login() {
 
 
 
-            <button
-              onClick={handleGoogle}
-              className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3"
-            >
-              <Globe size={20} />
-              Continue with Google
-            </button>
+          <button
+            onClick={handleGoogle}
+            className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3"
+          >
+            <Globe size={20} />
+            Continue with Google
+          </button>
 
-            <button
-              onClick={handleGithub}
-              disabled={loading}
-              className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3 transition"
-            >
-              <Globe size={20} />
-              Continue with GitHub
-            </button>
-          
-          
+          <button
+            onClick={handleGithub}
+            disabled={loading}
+            className="w-full py-3 rounded-xl border border-[#262626] hover:border-red-600 flex justify-center items-center gap-3 transition"
+          >
+            <Globe size={20} />
+            Continue with GitHub
+          </button>
+
+
           <p className="
           text-center
           text-gray-400
