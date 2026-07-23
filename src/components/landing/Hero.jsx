@@ -237,46 +237,6 @@ export default function Hero() {
       </div>
     </section>
 
-            {/* AI Chat Preview */}
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-20 w-full max-w-5xl rounded-3xl border border-white/10 bg-[#111111] shadow-2xl"
-        >
-
-          {/* Header */}
-
-
-          {/* Input */}
-
-          <div className="border-t border-white/10 p-5">
-
-            <div className="flex items-center rounded-2xl bg-[#1a1a1a] px-4 py-3">
-
-              <Plus
-                size={18}
-                className="text-gray-500"
-              />
-
-              <input
-                disabled
-                placeholder="Message NEW AI..."
-                className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-500"
-              />
-
-              <ArrowRight
-                size={18}
-                className="text-red-500"
-              />
-
-            </div>
-
-          </div>
-
-        </motion.div>
-
       {/* Features */}
 
       <section className="py-24">
