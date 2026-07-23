@@ -403,17 +403,6 @@ export default function Hero() {
                   whileHover={{
                     y: -8,
                   }}
-
-                  className="
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-[#111111]
-                  p-8
-                  transition
-                  hover:border-red-500/40
-                  "
-
                 >
 
                   <div className="
