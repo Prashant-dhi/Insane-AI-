@@ -5,6 +5,7 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -112,27 +113,30 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-4 text-gray-400">
-
               <li className="hover:text-red-500 cursor-pointer">
-                About
+                <Link to="/about">About</Link>
               </li>
 
               <li className="hover:text-red-500 cursor-pointer">
-                Careers
+                <Link to="/careers">Careers</Link>
               </li>
 
               <li className="hover:text-red-500 cursor-pointer">
-                Contact
+                <Link to="/contact">Contact</Link>
               </li>
 
               <li className="hover:text-red-500 cursor-pointer">
-                Blog
+                <Link to="/blog">Blog</Link>
               </li>
 
-              <li className="hover:text-red-500 cursor-pointer">
-                Privacy
+              <li>
+                <Link
+                  to="/privacy"
+                  className="hover:text-red-500 transition"
+                >
+                  Privacy
+                </Link>
               </li>
-
             </ul>
 
           </div>
@@ -149,7 +153,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Mail className="text-red-500" size={18} />
-                <span>support@newai.com</span>
+                <span>INSANE@ai.com</span>
               </div>
 
               <div className="flex gap-4 mt-8">

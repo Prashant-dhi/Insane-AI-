@@ -49,9 +49,9 @@ function App() {
         {/* Default */}
 
         <Route
-  path="/"
-  element={<Landing />}
-/>
+          path="/"
+          element={<Landing />}
+        />
 
 
 
@@ -110,8 +110,6 @@ function App() {
             path="/profile"
             element={<Profile />}
           />
-
-
           <Route
             path="/settings"
             element={<Settings />}
@@ -153,7 +151,7 @@ function App() {
             element={<Contact />}
           />
 
- <Route path="/upgrade" element={<Pricing />} />
+          <Route path="/upgrade" element={<Pricing />} />
 
 
           <Route
